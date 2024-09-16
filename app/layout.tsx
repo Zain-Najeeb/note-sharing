@@ -5,7 +5,7 @@ import "./globals.css";
 
 const RobotoMono = localFont({
   src: "../public/fonts/RobotoMono-VariableFont_wght.ttf",
-  variable: "--font-geist-mono",
+  variable: "--font-roboto-mono",
   weight: "100 900",
 });
 

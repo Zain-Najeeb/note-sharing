@@ -8,6 +8,7 @@
   --primary-text: #FFFFFF; 
   --secondary-text: #BBBBBB ; 
   --accent-colour: #4A90E2; 
+  --hover-colour: #357ABD;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,15 +1,11 @@
 "use client"
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-type TypewriterProps = {
-  words: string[];
-};
-
-const Typewriter: React.FC<TypewriterProps> = ({ words }) => {
+const useTypewriter = (words: string[], typingSpeed = 60, deletingSpeed = 40, pauseDuration = 1100) => {
   const [currentWord, setCurrentWord] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const typingSpeed = 60, deletingSpeed = 40, pauseDuration = 1100 
+
   useEffect(() => {
     const word = words[currentIndex % words.length];
 
@@ -29,13 +25,6 @@ const Typewriter: React.FC<TypewriterProps> = ({ words }) => {
     return () => clearTimeout(timer);
   }, [currentWord, currentIndex, isDeleting, words, typingSpeed, deletingSpeed, pauseDuration]);
 
-
-  return (
-    <div className='flex'>
-      <h1>{currentWord}</h1>
-      <span>|</span> 
-    </div>
-  );
+  return currentWord;
 };
-
-export default Typewriter;
+export default useTypewriter;

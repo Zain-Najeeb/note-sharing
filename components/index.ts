@@ -1,1 +1,2 @@
-export { default as Typewriter } from './typeWriter'
+export { default as Navbar } from './navbar'; 
+export { default as CenterText } from './centerText'

@@ -1,1 +1,1 @@
-export const infoWords: string[] = ["Note-Sharing", "Stay Anonymous", "Ask Stupid Questions", "Be Bold"];
+export const infoWords: string[] = ["Stay Anonymous", "Note-Sharing", "Ask Stupid Questions", "Be Bold", "Remain Private and Detached", "Embrace Curiosity"];
