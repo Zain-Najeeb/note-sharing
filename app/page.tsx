@@ -18,6 +18,9 @@ export default function HomePage() {
           <div className="flex justify-center items-center py-16">
             <MenuBubble />
           </div>
+          <div className="w-full">
+            <Divider />
+          </div>
         </div>
       </main>
       <Footer/>

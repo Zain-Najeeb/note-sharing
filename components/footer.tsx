@@ -4,7 +4,7 @@ import { Github, Linkedin } from 'lucide-react'
 
 export default function DarkFooter() {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 px-4">
+    <footer className="bg-gray-900 text-gray-300 py-6 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="mb-4 md:mb-0">
@@ -32,7 +32,7 @@ export default function DarkFooter() {
             </svg>
             <span className="font-semibold text-xl">StealthStudy</span>
           </div>
-          <Button className="bg-primary hover:bg-primary/90">
+          <Button className="bg-white text-black hover:bg-white/90">
             Open StealthStudy
           </Button>
         </div>

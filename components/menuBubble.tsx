@@ -10,9 +10,9 @@ export default function MenuBubble() {
             <AvatarFallback>CL</AvatarFallback>
           </Avatar>
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">Our Vision</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">The Vision</h1>
             <p className="text-gray-300 text-sm md:text-base">
-              Our mission is to revolutionize streaming experiences by creating immersive, low-latency platforms that bring people together, no matter the distance. We strive to make virtual interactions feel as natural and engaging as being in the same room, fostering connections and shared experiences in the digital age.
+              The mission is to revolutionize streaming experiences by creating immersive, low-latency platforms that bring people together, no matter the distance. We strive to make virtual interactions feel as natural and engaging as being in the same room, fostering connections and shared experiences in the digital age.
             </p>
           </div>
         </div>

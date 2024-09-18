@@ -8,7 +8,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ isPhone }) => {
 
     return (
         <>
-            <a href="#" className={`${baseClass} ${blockClass}`}>Our Vision</a>
+            <a href="#" className={`${baseClass} ${blockClass}`}>The Vision</a>
             <a href="#" className={`${baseClass} ${blockClass}`}>Safety</a>
             <a href="#" className={`${baseClass} ${blockClass}`}>FAQ</a>
             <a href="#" className={`${baseClass} ${blockClass}`}>Examples</a>
