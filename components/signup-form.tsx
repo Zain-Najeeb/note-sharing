@@ -3,18 +3,30 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { SignUp } from "@/types/users"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-
 export default function SignupFormComponent() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
   const [university, setUniversity] = useState("")
+  const [isPasswordMatch, setIsPasswordMatch] = useState(true)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.log({ email, password, confirmPassword, university })
+    if (isPasswordMatch) {
+      const signUpForm: SignUp = {
+        email: email, 
+        password: password, 
+        university: university 
+      }
+
+    } 
+  }
+
+  const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setConfirmPassword(e.target.value)
+    setIsPasswordMatch(e.target.value === password)
   }
 
   return (
@@ -35,6 +47,7 @@ export default function SignupFormComponent() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full bg-gray-700 text-white border-gray-600 focus:border-blue-500"
+                autoComplete="username"
               />
             </div>
             <div>
@@ -48,19 +61,29 @@ export default function SignupFormComponent() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 className="w-full bg-gray-700 text-white border-gray-600 focus:border-blue-500"
+                autoComplete="new-password"
               />
             </div>
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="confirmPassword"
+                className={`block text-sm font-medium mb-1 ${isPasswordMatch ? 'text-gray-300' : 'text-red-500'}`}
+              >
                 Confirm Password
+                {!isPasswordMatch && (
+                  <span style={{ fontStyle: 'italic', color: 'red' }}>
+                    {' - Passwords don\'t match'}
+                  </span>
+                )}
               </label>
               <Input
                 id="confirmPassword"
                 type="password"
                 value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
+                onChange={handleConfirmPasswordChange}
                 required
-                className="w-full bg-gray-700 text-white border-gray-600 focus:border-blue-500"
+                className={`w-full bg-gray-700 text-white border-gray-600 focus:border-blue-500 ${!isPasswordMatch ? 'border-red-500' : ''}`}
+                autoComplete="new-password"
               />
             </div>
             <div>

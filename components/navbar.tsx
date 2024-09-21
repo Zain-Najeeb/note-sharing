@@ -19,7 +19,7 @@ export default function Navbar() {
           </div>
           <div className="hidden md:block">
             <button className="bg-white  px-4 py-2 rounded-full text-sm  mr-2 hover:shadow-md transition-shadow">
-              <Link href={'/signup'} className='text-black font-medium'>
+              <Link href={'/register/signup'} className='text-black font-medium'>
                 Open StealthStudy
               </Link>
             </button>
