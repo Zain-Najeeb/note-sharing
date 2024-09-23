@@ -5,4 +5,5 @@ export const StatusCodes = {
     "bad": 400, 
     "unauthorized": 401, 
     "forbidden": 403,
+    "internal": 500, 
 }

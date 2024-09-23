@@ -1,4 +1,11 @@
-export interface apiResposne {
+
+
+export interface ClientError {
+    error?: string
+}
+
+
+export interface ApiResposne {
     message: string
-    code?: number   
+    code: number   
 }

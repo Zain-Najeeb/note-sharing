@@ -3,8 +3,9 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { SignUp } from "@/types/users"
+import { SignUp, SingUpResponse } from "@/types/users"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { HandlePostCall } from "@/utils/handleApiCall"
 export default function SignupFormComponent() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -12,7 +13,7 @@ export default function SignupFormComponent() {
   const [university, setUniversity] = useState("")
   const [isPasswordMatch, setIsPasswordMatch] = useState(true)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (isPasswordMatch) {
       const signUpForm: SignUp = {
@@ -20,7 +21,9 @@ export default function SignupFormComponent() {
         password: password, 
         university: university 
       }
-
+      console.log("SENT"); 
+      const SignUpAction: SingUpResponse = await HandlePostCall<SingUpResponse>({route: 'register/signup', body:signUpForm})
+      console.log(SignUpAction); 
     } 
   }
 
